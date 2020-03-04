@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  postgres:
+    image: healthcheck/postgres:alpine
+    environment:
+      POSTGRES_USER: jovalo
+      POSTGRES_DB: estates
+      POSTGRES_HOST_AUTH_METHOD: trust
+  api:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      DATABASE_NAME: estates
+      DATABASE_USERNAME: jovalo
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - 'postgres'
