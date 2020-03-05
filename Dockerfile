@@ -5,6 +5,9 @@ LABEL project="realState"
 #Set 1 to receiving timely log messages
 ENV PYTHONUNBUFFERED 1
 
+RUN apt-get update && apt-get install -y \
+    netcat
+
 WORKDIR /app
 
 COPY requirements.txt .

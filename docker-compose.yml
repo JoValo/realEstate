@@ -3,7 +3,8 @@ version: '3'
 services:
   api:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    restart: always
+    command: ./wait-for-it.sh
     environment:
       DATABASE_NAME: estates
       DATABASE_USERNAME: jovalo
