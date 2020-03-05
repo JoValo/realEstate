@@ -10,6 +10,10 @@ services:
       DATABASE_USERNAME: jovalo
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
+      DATABASE_PASSWORD: mypass
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: AKIAIOSFODNN7EXAMPLE
+      AWS_SECRET_ACCESS_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
     volumes:
       - .:/app
     ports:
@@ -21,4 +25,6 @@ services:
     environment:
       POSTGRES_USER: jovalo
       POSTGRES_DB: estates
-      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_PASSWORD: mypass
+
+      

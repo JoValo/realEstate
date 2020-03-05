@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from api.resources import RealStateResource
+from api.resources import RealEstateResource
 
-real_state_resource = RealStateResource()
+real_estate_resource = RealEstateResource()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(real_state_resource.urls)),
+    url(r'^api/', include(real_estate_resource.urls)),
 ]

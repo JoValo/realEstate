@@ -47,10 +47,10 @@ class Address(models.Model):
     return "%s" % (self.id)
 
 #------------------------------------------------------------------------------
-# RealState model
+# RealEstate model
 # Principal
 #------------------------------------------------------------------------------
-class RealState(models.Model):
+class RealEstate(models.Model):
   id = models.UUIDField(
     primary_key=True,
     default=uuid.uuid4,
@@ -70,13 +70,11 @@ class RealState(models.Model):
     "Approval state",
     default=False
   )
-  latitude = models.CharField(
-    "Latitude",
-    max_length=50
+  latitude = models.FloatField(
+    "Latitude"
   )
-  longitude = models.CharField(
-    "Longitude",
-    max_length=50
+  longitude = models.FloatField(
+    "Longitude"
   )
   files = JSONField(null=True)
   address = models.OneToOneField(
